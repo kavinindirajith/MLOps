@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  preprocess:
+    cmd: python src/preprocessing.py
+    deps:
+    - path: data/heart_attack_prediction_indonesia.csv
+      hash: md5
+      md5: f36c7f02a8743421a418122833f1957b
+      size: 20749628
+    - path: src/preprocessing.py
+      hash: md5
+      md5: bafb87de78b6320a27029105803cf2fb
+      size: 602
+    outs:
+    - path: data/processed_data.csv
+      hash: md5
+      md5: 81523602f9240a4311fbc228bf6ebb65
+      size: 5385950

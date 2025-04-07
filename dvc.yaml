@@ -1,0 +1,8 @@
+stages:
+  preprocess:
+    cmd: python src/preprocessing.py
+    deps:
+    - data/heart_attack_prediction_indonesia.csv
+    - src/preprocessing.py
+    outs:
+    - data/processed_data.csv
