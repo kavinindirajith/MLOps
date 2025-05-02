@@ -1,0 +1,43 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: reddit-deployment
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: reddit-app
+#   template:
+#     metadata:
+#       labels:
+#         app: reddit-app
+#     spec:
+#       containers:
+#       - name: reddit-app
+#         image: reddit-app:latest
+#         imagePullPolicy: Never
+#         ports:
+#         - containerPort: 8000
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reddit-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reddit-app
+  template:
+    metadata:
+      labels:
+        app: reddit-app
+    spec:
+      containers:
+      - name: reddit-app
+        # image: us-west1-docker.pkg.dev/kavinmsds603-458620/lab9/reddit-app:latest
+        # imagePullPolicy: Always
+        image: reddit-app:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8000
